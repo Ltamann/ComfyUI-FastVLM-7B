@@ -131,10 +131,6 @@ class FastVLM7BNode:
     def inference(self, image, instruction, max_new_tokens):
         # Convert ComfyUI tensor image -> PIL
         pil_img = tensor_to_pil(image, 0)
-        #if isinstance(image, list):
-        #    image = image[0]
-        #pil_img = Image.fromarray((image.cpu().numpy() * 255).astype("uint8"))
-
         response = run_fastvlm7b(pil_img, instruction, max_new_tokens)
         return (response,)
 
