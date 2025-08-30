@@ -126,7 +126,7 @@ class FastVLM7BNode:
 
     RETURN_TYPES = ("STRING",)
     FUNCTION = "inference"
-    CATEGORY = "AI/FastVLM"
+    CATEGORY = "TBG/Helpers"
 
     def inference(self, image, instruction, max_new_tokens):
         # Convert ComfyUI tensor image -> PIL
