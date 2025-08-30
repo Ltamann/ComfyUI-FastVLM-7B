@@ -1,12 +1,6 @@
 
-
-from math import gcd
-import cv2
 import numpy as np
-from PIL import Image
-from typing import Tuple, List
 from nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
-from pygments.lexer import default
 import os
 import torch
 from PIL import Image
@@ -25,14 +19,6 @@ def tensor_to_pil(image_tensor, batch_index=0) -> Image:
     i = 255.0 * image_tensor.cpu().numpy()
     img = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8).squeeze())
     return img
-
-def pil_to_tensor(image):
-    # Takes a PIL image and returns a tensor of shape [1, height, width, channels]
-    image = np.array(image).astype(np.float32) / 255.0
-    image = torch.from_numpy(image).unsqueeze(0)
-    #if len(image.shape) == 3:  # If the image is grayscale, add a channel dimension
-    #    image = image.unsqueeze(-1)
-    return image
 
 
 def get_models_dir():
@@ -126,17 +112,13 @@ class FastVLM7BNode:
 
     RETURN_TYPES = ("STRING",)
     FUNCTION = "inference"
-    CATEGORY = "TBG/Helpers"
+    CATEGORY = "AI/FastVLM"
 
     def inference(self, image, instruction, max_new_tokens):
         # Convert ComfyUI tensor image -> PIL
         pil_img = tensor_to_pil(image, 0)
         response = run_fastvlm7b(pil_img, instruction, max_new_tokens)
         return (response,)
-
-
-
-
 
 NODE_CLASS_MAPPINGS["FastVLM7BNode"] = FastVLM7BNode
 NODE_DISPLAY_NAME_MAPPINGS["FastVLM7BNode"] = "FastVLM 7B (Apple)"
