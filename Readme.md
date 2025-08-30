@@ -16,6 +16,7 @@ This node lets you pass an **image + instruction** and returns a **generated tex
   - Downloads model into it on first run.  
 - 🔹 Works on **GPU (fp16)** or **CPU (fp32)** depending on your system.
 
+[Please check Apple License before downloading the Model](https://huggingface.co/apple/FastVLM-7B/blob/main/LICENSE)
 ---
 [support us on Patreon](https://www.patreon.com/c/TB_LAAR)
 
