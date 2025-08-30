@@ -16,9 +16,9 @@ This node lets you pass an **image + instruction** and returns a **generated tex
   - Downloads model into it on first run.  
 - 🔹 Works on **GPU (fp16)** or **CPU (fp32)** depending on your system.
 
-
- [support us on Patreon](https://www.patreon.com/c/TB_LAAR)
- [Check our TBG Enhanced upscaler and Refiner for ComfyUI at https://github.com/Ltamann/ComfyUI-TBG-ETUR](https://github.com/Ltamann/ComfyUI-TBG-ETUR)
 ---
+[support us on Patreon](https://www.patreon.com/c/TB_LAAR)
+[Check our TBG Enhanced upscaler and Refiner for ComfyUI at https://github.com/Ltamann/ComfyUI-TBG-ETUR](https://github.com/Ltamann/ComfyUI-TBG-ETUR)
+
 
 
